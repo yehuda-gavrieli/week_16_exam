@@ -1,4 +1,11 @@
 from connection import employees_col
+# import json 
+
+# def load_json():
+#     with open("./employee_data_advanced") as file:
+#         file_data = json.load(file)
+#         ins_result = conn().insert_many(file_data)
+#         return ins_result
 
 
 def get_engineering_high_salary_employees():
@@ -29,7 +36,7 @@ def get_managers_excluding_departments():
     return list(employees_col.find(query, {"_id": 0}))
 
 def get_employees_by_lastname_and_age():
-    query = {"name": {"$regex": r"(Nelson|Wright)$", "$options": "i"},
+    query = {"name": {"$regex": r"(Nelson|Wright)$"},
              "age": {"$lt": 35}}
     projection = {"name": 1, "age": 1, "job_role.department": 1, "_id": 0}
     return list(employees_col.find(query, projection))

@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import dal
 
+
 app = FastAPI()
 
 @app.get("/employees/engineering/high-salary")

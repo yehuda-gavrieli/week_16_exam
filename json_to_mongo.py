@@ -19,9 +19,9 @@ db = myclient[mongo_db]
 Collection = db[mongo_collection]
 
 # Loading or Opening the json file
-with open(file_path) as file:
+with open("./e") as file:
     file_data = json.load(file)
+    ins_result = Collection.insert_many(file_data)
 
 # Inserting the loaded data in the Collection
-ins_result = Collection.insert_many(file_data)
 print(f"Data inserted to MongoDB. Documents inserted: {len(ins_result.inserted_ids)}")

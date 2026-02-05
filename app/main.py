@@ -20,7 +20,7 @@ def age_or_seniority():
     return dal.get_employees_by_age_or_seniority()
 
 @app.get("/employees/managers/excluding-departments")
-def managers_no_excluding_departments():
+def managers_not_in__excluding_departments():
     return dal.get_managers_excluding_departments()
 
 @app.get("/employees/by-lastname-and-age")
